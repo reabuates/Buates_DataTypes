@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #ff3378;
+            color: #000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ef135c;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            color: #05063d;
+        }
+        a:hover {
+            color: #19b6b6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Profile</h1>
+    <form id="student-form">
+        <label for="input-name">Name:</label>
+        <input type="text" id="input-name" placeholder="Enter name">
+
+        <label for="input-grade">Grade:</label>
+        <input type="text" id="input-grade" placeholder="Enter grade">
+
+        <label for="input-enrolled-date">Enrolled Date:</label>
+        <input type="text" id="input-enrolled-date" placeholder="Enter enrolled date">
+
+        <label for="input-hobbies">Hobbies (comma-separated):</label>
+        <input type="text" id="input-hobbies" placeholder="Enter hobbies">
+
+        <button type="button" onclick="updateStudentProfile()">Update Profile</button>
+    </form>
+
+    <p><strong>Name:</strong> <span id="student-name"></span></p>
+    <p><strong>Grade:</strong> <span id="grade"></span></p>
+    <p><strong>Enrolled Date:</strong> <span id="enrolled-date"></span></p>
+    <p><strong>Hobbies:</strong> <span id="hobbies"></span></p>
+
+    <a href="subj.html">Go to Subjects Page</a>
+
+    <script>
+        function updateStudentProfile() {
+            const name = document.getElementById("input-name").value;
+            const grade = document.getElementById("input-grade").value;
+            const enrolledDate = document.getElementById("input-enrolled-date").value;
+            const hobbies = document.getElementById("input-hobbies").value.split(",");
+
+            document.getElementById("student-name").innerText = name;
+            document.getElementById("grade").innerText = grade;
+            document.getElementById("enrolled-date").innerText = enrolledDate;
+            document.getElementById("hobbies").innerText = hobbies.join(", ");
+        }
+    </script>
+</body>
+</html>
